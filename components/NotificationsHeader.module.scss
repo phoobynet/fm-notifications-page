@@ -1,0 +1,38 @@
+.notifications-header {
+  display: grid;
+  grid-template-columns: auto 2rem 1fr;
+  grid-template-rows: 4.5rem;
+  justify-content: start;
+  grid-column-gap: 1rem;
+  align-items: center;
+
+  h1 {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 25px;
+    color: var(--very-dark-grey-blue);
+  }
+
+  .unread {
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    padding: 0 .75rem;
+    border-radius: .40rem;
+    background-color: #0A327B;
+    place-self: center;
+  }
+
+  .market-all-as-read-container {
+    display: flex;
+    place-content: flex-end;
+
+    button {
+      font-size: 14px;
+      line-height: 17.64px;
+      font-weight: 500;
+      color: var(--dark-grey-blue);
+    }
+  }
+}
