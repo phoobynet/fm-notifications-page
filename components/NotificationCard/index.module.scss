@@ -1,0 +1,27 @@
+.notification-card {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: minmax(min-content, max-content) minmax(min-content, max-content);
+  font-size: 14px;
+  padding: 1rem 1rem;
+  border-radius: .5rem;
+
+  &[data-read=false] {
+    background-color: #F7FAFD;
+  }
+
+  .avatar-container {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+
+  .header-container {
+  }
+
+  .main-container {
+    grid-column-start: 2;
+    grid-row-start: 2;
+  }
+}

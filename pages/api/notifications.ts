@@ -52,7 +52,7 @@ export default function handler (
     timestamp: subWeeks(now, 1),
     heading: 'commented on your picture',
     relatedContent: '',
-    username: 'Rizky Hasanuddin',
+    username: 'Kimberly Smith',
     read: true,
     sentImageSrc: chess,
   }, {
