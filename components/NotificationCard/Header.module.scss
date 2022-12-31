@@ -1,6 +1,6 @@
 .header {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: auto minmax(min-content, max-content);
   justify-content: space-between;
 
   span {
@@ -61,5 +61,6 @@
   height: 39px;
   object-fit: contain;
   object-position: right;
+  cursor: pointer;
 }
 

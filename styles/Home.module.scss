@@ -1,10 +1,29 @@
 .home {
-  display: grid;
-  grid-template-rows: 4.5rem auto;
-  margin: 0 1rem;
 
-  main {
+  @media screen and (min-width: 730px) {
+    display: flex;
+    justify-content: center;
+    background-color: var(--snow);
+    min-height: 100vh;
+  }
+
+  .container {
     display: grid;
-    grid-row-gap: .65rem;
+    grid-template-rows: 4.5rem auto;
+    margin: 0rem 1rem;
+    background-color: white;
+
+    @media screen and (min-width: 730px) {
+      margin: 4rem 1rem;
+      padding: 1rem 2rem;
+      border-radius: 1rem;
+      max-width: 730px;
+      filter: drop-shadow(0 .5rem .5rem var(--very-light-grey-blue));
+    }
+
+    main {
+      display: grid;
+      grid-row-gap: .65rem;
+    }
   }
 }

@@ -21,7 +21,7 @@ export default function NotificationsHeader ({
       <h1>Notifications</h1>
       <div className={styles.unread}>{unread}</div>
       <div className={styles.marketAllAsReadContainer}>
-        <button onClick={markAllAsRead}>Mark all as read</button>
+        <button onClick={markAllAsRead} className={styles.markAllAsRead}>Mark all as read</button>
       </div>
     </header>
   )

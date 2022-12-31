@@ -19,9 +19,8 @@ export default function NotificationCard ({ notification }: Props) {
         <div className={styles.avatarContainer}>
           <Avatar />
         </div>
-        <div className={styles.headerContainer}>
-          <Header />
-        </div>
+
+        <Header />
 
         <div className={styles.mainContainer}>
           <Main />

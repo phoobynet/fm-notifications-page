@@ -29,21 +29,23 @@ export default function Home () {
       </Head>
 
       <div className={styles.home}>
-        {loading && <div>Loading...</div>}
-        <NotificationsHeader
-          notifications={notifications}
-          markAllAsRead={() => {console.log('TODO')}}
-        />
+        <div className={styles.container}>
+          {loading && <div>Loading...</div>}
+          <NotificationsHeader
+            notifications={notifications}
+            markAllAsRead={() => {console.log('TODO')}}
+          />
 
-        <main>
-          {!loading &&
-            notifications
-              .map((notification, index) => (<NotificationCard
-                notification={notification}
-                key={index}
-              />))
-          }
-        </main>
+          <main>
+            {!loading &&
+              notifications
+                .map((notification, index) => (<NotificationCard
+                  notification={notification}
+                  key={index}
+                />))
+            }
+          </main>
+        </div>
       </div>
     </>
   )

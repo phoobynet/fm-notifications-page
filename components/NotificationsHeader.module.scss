@@ -28,11 +28,12 @@
     display: flex;
     place-content: flex-end;
 
-    button {
+    .mark-all-as-read {
       font-size: 14px;
       line-height: 17.64px;
       font-weight: 500;
       color: var(--dark-grey-blue);
+      cursor: pointer;
     }
   }
 }
