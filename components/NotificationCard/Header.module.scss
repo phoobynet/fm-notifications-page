@@ -12,6 +12,11 @@
   font-weight: 800;
   color: var(--very-dark-grey-blue);
   white-space: nowrap;
+
+  &:hover {
+    cursor: pointer;
+    color: var(--blue);
+  }
 }
 
 .heading {
@@ -20,24 +25,21 @@
 }
 
 .related-content {
+  text-decoration: none;
   font-weight: 700;
-  color: var(--dark-grey-blue);
-
-  &:link {
-    text-decoration: none;
-  }
+  color: var(--blue);
 
   &:visited {
-    text-decoration: none;
+    color: var(--very-dark-grey-blue);
   }
 
-  &:hover {
-    text-decoration: none;
+  &:hover &:active{
+    color: var(--blue);
   }
 
-  &:active {
-    text-decoration: none;
-  }
+  //&:active {
+  //  color: var(--blue);
+  //}
 }
 
 .unread-indicator {

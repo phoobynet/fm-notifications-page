@@ -6,5 +6,3 @@ export interface NotificationCardContextState {
 }
 
 export const NotificationCardContext = createContext<NotificationCardContextState | null>(null)
-
-

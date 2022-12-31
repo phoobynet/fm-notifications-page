@@ -1,14 +1,19 @@
 import Head from 'next/head'
-import NotificationCard from '@/components/NotificationCard'
 import styles from '@/styles/Home.module.scss'
 import { useNotifications } from '@/hooks/useNotifications'
-import NotificationsHeader from '@/components/NotificationsHeader'
+import NotificationCards from '@/components/NotificationCards'
 
 export default function Home () {
   const {
+    markAllAsRead,
+    markAllAsUnread,
     loading,
     notifications,
   } = useNotifications()
+
+  if (loading) {
+    return null
+  }
 
   return (
     <>
@@ -29,23 +34,11 @@ export default function Home () {
       </Head>
 
       <div className={styles.home}>
-        <div className={styles.container}>
-          {loading && <div>Loading...</div>}
-          <NotificationsHeader
-            notifications={notifications}
-            markAllAsRead={() => {console.log('TODO')}}
-          />
-
-          <main>
-            {!loading &&
-              notifications
-                .map((notification, index) => (<NotificationCard
-                  notification={notification}
-                  key={index}
-                />))
-            }
-          </main>
-        </div>
+        <NotificationCards
+          notifications={notifications}
+          markAllAsRead={markAllAsRead}
+          markAllAsUnread={markAllAsUnread}
+        />
       </div>
     </>
   )

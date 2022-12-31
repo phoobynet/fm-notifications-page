@@ -3,7 +3,7 @@ import { Notification } from '@/types/Notification'
 import Avatar from '@/components/NotificationCard/Avatar'
 import Header from '@/components/NotificationCard/Header'
 import { NotificationCardContext } from './NotificationCardContext'
-import Main from '@/components/NotificationCard/Main'
+import Message from '@/components/NotificationCard/Message'
 
 interface Props {
   notification: Notification
@@ -22,8 +22,8 @@ export default function NotificationCard ({ notification }: Props) {
 
         <Header />
 
-        <div className={styles.mainContainer}>
-          <Main />
+        <div className={styles.messageContainer}>
+          <Message />
         </div>
       </div>
     </NotificationCardContext.Provider>

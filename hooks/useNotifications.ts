@@ -13,6 +13,10 @@ const getNotifications = async (): Promise<Notification[]> => axios.get<Notifica
   r => r.data).then(
   cleanNotificationTimestamps)
 
+const markAllAsRead = async (): Promise<void> => {
+  await axios.put('/api/notifications/market-all-as-read')
+}
+
 export const useNotifications = () => {
   const [notifications, setNotifications] = useState<Notification[]>([])
   const [loading, setLoading] = useState(true)
@@ -29,7 +33,31 @@ export const useNotifications = () => {
     })()
   }, [])
 
+  const markAllAsRead = async () => {
+    try {
+      await axios.put('/api/notifications/mark-all-as-read')
+      getNotifications().then(setNotifications)
+    } catch (e) {
+      console.error(e)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const markAllAsUnread = async () => {
+    try {
+      await axios.put('/api/notifications/mark-all-as-unread')
+      getNotifications().then(setNotifications)
+    } catch (e) {
+      console.error(e)
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return {
+    markAllAsRead,
+    markAllAsUnread,
     notifications,
     loading,
   }
