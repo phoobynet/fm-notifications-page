@@ -5,8 +5,8 @@ import styles from './Header.module.scss'
 
 interface Props {
   notifications: Notification[]
-  markAllAsRead: () => void
-  markAllAsUnread: () => void
+  markAllAsRead: () => Promise<void>
+  markAllAsUnread: () => Promise<void>
 }
 
 export default function Header ({

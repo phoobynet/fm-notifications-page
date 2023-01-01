@@ -7,11 +7,13 @@ import kimberlySmith from '@/assets/images/avatar-kimberly-smith.webp'
 import chess from '@/assets/images/image-chess.webp'
 import nathanPeterson from '@/assets/images/avatar-nathan-peterson.webp'
 import annaKim from '@/assets/images/avatar-anna-kim.webp'
+import cloneDeep from 'lodash/cloneDeep'
+import { Notification } from '@/types/Notification'
 
-export const fakeNotifications =
+const fakeNotifications =
   [{
     avatarSrc: markWebber,
-    timestamp: subMinutes(new Date(), 1),
+    timestamp: subMinutes(new Date(), 1).toISOString(),
     heading: 'reacted to your recent post',
     relatedContent: 'My first tournament today!',
     username: 'Mark Webber',
@@ -19,7 +21,7 @@ export const fakeNotifications =
     message: '',
   }, {
     avatarSrc: angelaGray,
-    timestamp: subMinutes(new Date(), 5),
+    timestamp: subMinutes(new Date(), 5).toISOString(),
     heading: 'followed you',
     relatedContent: '',
     username: 'Angela Gray',
@@ -27,7 +29,7 @@ export const fakeNotifications =
     message: '',
   }, {
     avatarSrc: jacobThompson,
-    timestamp: subDays(new Date(), 1),
+    timestamp: subDays(new Date(), 1).toISOString(),
     heading: 'has joined your group',
     relatedContent: 'Chess Club',
     username: 'Jacob Thompson',
@@ -35,7 +37,7 @@ export const fakeNotifications =
     message: '',
   }, {
     avatarSrc: rizkyHasanuddin,
-    timestamp: subDays(new Date(), 5),
+    timestamp: subDays(new Date(), 5).toISOString(),
     heading: 'sent you a private message',
     relatedContent: '',
     username: 'Rizky Hasanuddin',
@@ -43,7 +45,7 @@ export const fakeNotifications =
     message: 'Hello, thanks for setting up the Chess Club. I’ve been a member for a few weeks now and I’m already having lots of fun and improving my game.',
   }, {
     avatarSrc: kimberlySmith,
-    timestamp: subWeeks(new Date(), 1),
+    timestamp: subWeeks(new Date(), 1).toISOString(),
     heading: 'commented on your picture',
     relatedContent: '',
     username: 'Kimberly Smith',
@@ -51,16 +53,18 @@ export const fakeNotifications =
     sentImageSrc: chess,
   }, {
     avatarSrc: nathanPeterson,
-    timestamp: subWeeks(new Date(), 2),
+    timestamp: subWeeks(new Date(), 2).toISOString(),
     heading: 'reacted to your recent post',
     relatedContent: '5 end-game strategies to increase your win rate',
     username: 'Nathan Peterson',
     read: true,
   }, {
     avatarSrc: annaKim,
-    timestamp: subWeeks(new Date(), 2),
+    timestamp: subWeeks(new Date(), 2).toISOString(),
     heading: 'left the group',
     relatedContent: 'Chess Club',
     username: 'Anna Kim',
     read: true,
   }]
+
+export const getFakeNotifications = (): Notification[] => cloneDeep<Notification[]>(fakeNotifications)

@@ -1,19 +1,13 @@
-import { Notification } from '@/types/Notification'
 import NotificationCard from '@/components/NotificationCard'
 import styles from './index.module.scss'
 import Header from './Header'
+import { useNotificationStore } from '@/stores/useNotificationStore'
 
-interface Props {
-  notifications: Notification[]
-  markAllAsRead: () => void
-  markAllAsUnread: () => void
-}
+export default function NotificationCards () {
+  const notifications = useNotificationStore(state => state.notifications)
+  const markAllAsRead = useNotificationStore(state => state.markAllAsRead)
+  const markAllAsUnread = useNotificationStore(state => state.markAllAsUnread)
 
-export default function NotificationCards ({
-  notifications,
-  markAllAsRead,
-  markAllAsUnread,
-}: Props) {
   return (
     <div className={styles.notificationCards}>
       <Header

@@ -1,17 +1,32 @@
 import Head from 'next/head'
 import styles from '@/styles/Home.module.scss'
-import { useNotifications } from '@/hooks/useNotifications'
 import NotificationCards from '@/components/NotificationCards'
+import { GetServerSideProps } from 'next'
+import { useNotificationStore } from '@/stores/useNotificationStore'
+import { Notification } from '@/types/Notification'
+import { useEffect } from 'react'
+import { getFakeNotifications } from '@/data/fakeNotifications'
 
-export default function Home () {
-  const {
-    markAllAsRead,
-    markAllAsUnread,
-    loading,
-    notifications,
-  } = useNotifications()
+interface Props {
+  initialNotifications?: Notification[]
+}
 
-  if (loading) {
+export default function Home ({ initialNotifications }: Props) {
+  const setNotifications = useNotificationStore(state => state.setNotifications)
+  const fetch = useNotificationStore(state => state.fetch)
+  const fetching = useNotificationStore(state => state.fetching)
+
+  useEffect(() => {
+    if (initialNotifications?.length) {
+      setNotifications(initialNotifications)
+    } else {
+      (async () => {
+        await fetch()
+      })()
+    }
+  }, [])
+
+  if (fetching) {
     return null
   }
 
@@ -34,12 +49,19 @@ export default function Home () {
       </Head>
 
       <div className={styles.home}>
-        <NotificationCards
-          notifications={notifications}
-          markAllAsRead={markAllAsRead}
-          markAllAsUnread={markAllAsUnread}
-        />
+        <NotificationCards />
       </div>
     </>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const notifications = getFakeNotifications()
+  console.log('Hello, Server-side!')
+
+  return {
+    props: {
+      initialNotifications: notifications,
+    },
+  }
 }

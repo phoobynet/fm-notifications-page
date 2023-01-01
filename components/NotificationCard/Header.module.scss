@@ -30,16 +30,16 @@
   color: var(--blue);
 
   &:visited {
-    color: var(--very-dark-grey-blue);
+    color: var(--dark-grey-blue);
   }
 
-  &:hover &:active{
+  &:hover &:active {
     color: var(--blue);
   }
 
-  //&:active {
-  //  color: var(--blue);
-  //}
+  &[data-fake-visited=true] {
+    color: var(--dark-grey-blue);
+  }
 }
 
 .unread-indicator {

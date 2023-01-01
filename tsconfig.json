@@ -35,8 +35,8 @@
       "@/lib/*": [
         "lib/*"
       ],
-      "@/hooks/*": [
-        "hooks/*"
+      "@/stores/*": [
+        "stores/*"
       ],
       "@/data/*": [
         "data/*"

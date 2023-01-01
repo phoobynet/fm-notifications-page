@@ -3,7 +3,7 @@ import { StaticImageData } from 'next/image'
 export interface Notification {
   username: string
   avatarSrc: StaticImageData
-  timestamp: Date
+  timestamp: string
   heading: string
   relatedContent: string
   read: boolean
