@@ -29,10 +29,6 @@
   font-weight: 700;
   color: var(--blue);
 
-  &:visited {
-    color: var(--dark-grey-blue);
-  }
-
   &:hover &:active {
     color: var(--blue);
   }
