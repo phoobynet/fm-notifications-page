@@ -1,9 +1,9 @@
 .notification-card {
   display: grid;
-  grid-template-columns: 52px auto;
+  grid-template-columns: 3.25rem auto;
   grid-template-rows:auto 1fr;
   grid-auto-flow: dense;
-  font-size: 14px;
+  font-size: 0.875rem;
   padding: 1rem 1rem;
   border-radius: .5rem;
 

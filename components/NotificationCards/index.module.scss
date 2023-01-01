@@ -6,13 +6,13 @@
   background-color: white;
   overflow: hidden;
   position: relative;
-  max-height: 839px;
+  max-height: 52.438rem;
 
   @media screen and (min-width: 730px) {
     margin: 4rem 1rem;
     padding: 1rem 2rem;
     border-radius: 1rem;
-    max-width: 730px;
+    max-width: 45.625rem;
     filter: drop-shadow(0 .5rem .5rem var(--very-light-grey-blue));
   }
 

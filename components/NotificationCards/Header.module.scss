@@ -9,8 +9,8 @@
   h1 {
     font-style: normal;
     font-weight: 800;
-    font-size: 20px;
-    line-height: 25px;
+    font-size: 1.25rem;
+    line-height: 1.563rem;
     color: var(--very-dark-grey-blue);
   }
 
@@ -29,8 +29,8 @@
     place-content: flex-end;
 
     .mark-all-as-read {
-      font-size: 14px;
-      line-height: 17.64px;
+      font-size: 0.875rem;
+      line-height: 1.103rem;
       font-weight: 500;
       color: var(--dark-grey-blue);
       cursor: pointer;

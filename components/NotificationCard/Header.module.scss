@@ -53,14 +53,16 @@
 
 .ago {
   font-weight: 500;
-  font-size: 14px;
-  line-height: 18px;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
   color: var(--grey-blue);
 }
 
+$sent-image-src-size: 2.438rem;
+
 .sentImageSrc {
-  min-width: 39px;
-  height: 39px;
+  min-width: $sent-image-src-size;
+  height: $sent-image-src-size;
   object-fit: contain;
   object-position: right;
   cursor: pointer;

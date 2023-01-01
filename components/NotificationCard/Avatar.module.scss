@@ -1,6 +1,8 @@
+$avatar-size: 2.438rem;
+
 .avatar {
-  width: 39px;
-  height: 39px;
+  width: $avatar-size;
+  height: $avatar-size;
   object-fit: contain;
 }
 
